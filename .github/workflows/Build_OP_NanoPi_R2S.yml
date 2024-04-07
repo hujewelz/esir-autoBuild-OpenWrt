@@ -89,6 +89,11 @@ jobs:
         make download -j$(nproc)
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
+
+    - name: DF
+      run: |
+        df -h
+        
     - name: Build firmware
       working-directory: ./openwrt
       run: |
